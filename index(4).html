@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Школьная библиотека — учебники онлайн</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">📚 Школьная библиотека</div>
+    <input type="text" id="search" class="search" placeholder="Поиск по названию или автору...">
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Фильтры -->
+  <section class="filters">
+    <div class="filter-group" id="classFilters">
+      <span class="filter-label">Класс:</span>
+      <button class="chip active" data-class="all">Все</button>
+      <button class="chip" data-class="1">1</button>
+      <button class="chip" data-class="5">5</button>
+      <button class="chip" data-class="6">6</button>
+      <button class="chip" data-class="7">7</button>
+      <button class="chip" data-class="8">8</button>
+      <button class="chip" data-class="9">9</button>
+      <button class="chip" data-class="10">10</button>
+      <button class="chip" data-class="11">11</button>
+    </div>
+    <div class="filter-group" id="subjectFilters">
+      <span class="filter-label">Предмет:</span>
+      <button class="chip active" data-subject="all">Все</button>
+      <button class="chip" data-subject="Математика">Математика</button>
+      <button class="chip" data-subject="Русский язык">Русский язык</button>
+      <button class="chip" data-subject="Литература">Литература</button>
+      <button class="chip" data-subject="История">История</button>
+      <button class="chip" data-subject="Физика">Физика</button>
+      <button class="chip" data-subject="Биология">Биология</button>
+      <button class="chip" data-subject="Английский язык">Английский</button>
+      <button class="chip" data-subject="Химия">Химия</button>
+      <button class="chip" data-subject="Окружающий мир">Окружающий мир</button>
+    </div>
+  </section>
+
+  <!-- Счётчик результатов -->
+  <p class="results-count" id="resultsCount"></p>
+
+  <!-- Каталог -->
+  <section class="catalog" id="catalog"></section>
+
+  <p class="empty" id="empty" hidden>Ничего не найдено 😔 Попробуйте изменить запрос или фильтры.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Школьная библиотека • Учебники для 1–11 классов</p>
+    <p class="hint">Чтобы добавить свою книгу — откройте файл <code>script.js</code> и добавьте запись в список <code>BOOKS</code>.</p>
+  </div>
+</footer>
+
+<!-- Модальное окно книги -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
